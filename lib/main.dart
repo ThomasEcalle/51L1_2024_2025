@@ -1,3 +1,4 @@
+import 'package:al1_2024/exercises/exercice_c.dart';
 import 'package:al1_2024/exercises/exercise_a.dart';
 import 'package:al1_2024/exercises/exercise_b.dart';
 import 'package:al1_2024/home.dart';
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const ExerciseB(),
+      home: const ExerciseC(),
     );
   }
 }
