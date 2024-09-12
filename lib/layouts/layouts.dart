@@ -9,8 +9,8 @@ class Layouts extends StatelessWidget {
     final screenWidth = MediaQuery.sizeOf(context).width;
     final small = screenWidth < 600;
 
-    final redCircles = List.generate(30, (index) {
-      return const RedCircle();
+    final redCircles = List.generate(25, (index) {
+      return RedCircle(index: index);
     });
 
     return Scaffold(
@@ -44,6 +44,9 @@ class Layouts extends StatelessWidget {
                                 vertical: 10,
                               ),
                               child: Wrap(
+                                direction: Axis.horizontal,
+                                spacing: 5,
+                                runSpacing: 5,
                                 children: redCircles,
                               ),
                             ),
