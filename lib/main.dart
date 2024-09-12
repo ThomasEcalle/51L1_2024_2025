@@ -1,8 +1,4 @@
-import 'package:al1_2024/exercises/exercice_c.dart';
-import 'package:al1_2024/exercises/exercise_a.dart';
-import 'package:al1_2024/exercises/exercise_b.dart';
-import 'package:al1_2024/home.dart';
-import 'package:al1_2024/layouts/layouts.dart';
+import 'package:al1_2024/lists/lists_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,7 +19,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const Layouts(),
+      home: const ListsScreen(),
     );
   }
 }
