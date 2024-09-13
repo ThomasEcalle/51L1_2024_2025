@@ -1,5 +1,19 @@
-void main() {
+import 'package:al1_2024/futures/app_exception.dart';
+
+void main() async {
   print('1');
+
+  try {
+    final value = await getStringFromNetwork();
+    final length = await getStringLengthFromNetwork(value);
+    print('Length = $length');
+  } on StringValueException catch (error) {
+    print('Got error getting string value : $error');
+  } on LengthValueException catch (error) {
+    print('Got error getting length : $error');
+  } catch (error) {
+    print('Got error $error');
+  }
 
   // getStringFromNetwork().then((stringValue) {
   //   getStringLengthFromNetwork(stringValue).then((length) {
@@ -14,15 +28,12 @@ void main() {
   print('3');
 }
 
-Future<String> getStringFromNetwork() {
-  return Future.delayed(const Duration(seconds: 1), () {
-    //throw Exception('Oups');
-    return 'Coucou';
-  });
+Future<String> getStringFromNetwork() async {
+  await Future.delayed(const Duration(seconds: 1));
+  return 'coucou';
 }
 
-Future<int> getStringLengthFromNetwork(String value) {
-  return Future.delayed(const Duration(seconds: 1), () {
-    return value.length;
-  });
+Future<int> getStringLengthFromNetwork(String value) async {
+  await Future.delayed(const Duration(seconds: 1));
+  return value.length;
 }
